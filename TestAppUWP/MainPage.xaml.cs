@@ -44,17 +44,20 @@ namespace TestAppUWP
                 }
             }
         }
-
+/*
         private MediaCapture m_mediaCapture;
         private MediaEncodingProfile m_encodingProfile;
         private Vizario.MediaSink.VizarioMediaSinkProxy m_mediaSink;
         private IMediaExtension m_mfExtension;
         private bool m_isInitialized = false;
+*/
         private bool m_isPlaying = false;
+/*
         private static readonly SemaphoreSlim m_mediaCaptureLifeLock = new SemaphoreSlim(1);
-
+*/
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
+/*
             // Using Windows.Media.Capture.MediaCapture APIs 
             // to stream from webcam
             if (!m_isPlaying)
@@ -64,10 +67,11 @@ namespace TestAppUWP
             }
             else
                 await CleanupCameraAsync();
+*/
         }
 
 
-
+/*
 #if NETFX_CORE
         //==================================================================================================
         // THIS WAS TAKEN FROM BARCODELIB
@@ -289,5 +293,6 @@ namespace TestAppUWP
         }
         #endregion Helper functions
 #endif
+*/
     }
 }

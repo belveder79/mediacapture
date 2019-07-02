@@ -109,6 +109,7 @@ private:
     ComPtr<CVizarioMediaSource> _spSource;
 };
 
+
 // REMOVE THIS TO MAKE IT BREAK!!!!
 ref class DummyU sealed {
 public:	DummyU() {}
@@ -118,148 +119,7 @@ DummyU^ CreateDummyU() {
 }
 // REMOVE THIS TO MAKE IT BREAK!!!!
 
-/*
-BYTE Clip(int i)
-{
-    return (i > 255 ? 255 : (i < 0 ? 0 : i));
-}
 
-DWORD YUVToRGB( BYTE Y, BYTE U, BYTE V)
-{
-    int C = INT(Y) - 16;
-    int D = INT(U) - 128;
-    int E = INT(V) - 128;
-
-    INT R = ( 298 * C           + 409 * E + 128) >> 8;
-    INT G = ( 298 * C - 100 * D - 208 * E + 128) >> 8;
-    INT B = ( 298 * C + 516 * D           + 128) >> 8;
-
-    DWORD ret = 0xff000000;
-    BYTE *bCols = reinterpret_cast<BYTE*>(&ret);
-
-    bCols[2] = Clip(R);
-    bCols[1] = Clip(G);
-    bCols[0] = Clip(B);
-
-    return ret;
-}
-
-ref class CFrameGenerator abstract
-{
-internal:
-    CFrameGenerator() { }
-
-    void PrepareFrame(BYTE *pBuf, LONGLONG llTimestamp, LONG lPitch)
-    {
-        ZeroMemory(pBuf, lPitch * c_dwOutputImageHeight);
-
-        sin((llTimestamp/100000.0)*3.1415);
-        DrawFrame(pBuf, YUVToRGB(128, 128 + BYTE(127 * sin(llTimestamp/10000000.0)), 128 + BYTE(127 * cos(llTimestamp/3300000.0))), lPitch);
-    }
-
-protected private:
-    virtual void DrawFrame(BYTE *pBuf, DWORD dwColor, LONG lPitch) = 0;
-
-    void SetColor(_In_reads_bytes_(cElements) DWORD *pBuf, DWORD dwColor, DWORD cElements)
-    {
-        for(DWORD nIndex = 0; nIndex < cElements; ++nIndex)
-        {
-            pBuf[nIndex] = dwColor;
-        }
-    }
-};
-
-ref class CSquareDrawer sealed: public CFrameGenerator
-{
-protected private:
-    void DrawFrame(BYTE *pBuf, DWORD dwColor, LONG lPitch) override
-    {
-        const DWORD dwDimension = min(c_dwOutputImageWidth, c_dwOutputImageHeight);
-        const int nFirstLine = (c_dwOutputImageHeight-dwDimension)/2;    
-        const int nStartPos = (c_dwOutputImageWidth-dwDimension)/2;
-
-        for (int nLine = 0; nLine < dwDimension; ++nLine, pBuf += lPitch)
-        {
-            DWORD *pLine = reinterpret_cast<DWORD *>(pBuf) + nStartPos;
-            SetColor(pLine, dwColor, dwDimension);
-        }
-    }
-};
-
-ref class CCircleDrawer sealed: public CFrameGenerator
-{
-protected private:
-    void DrawFrame(BYTE *pBuf, DWORD dwColor, LONG lPitch) override
-    {
-        const int dwDimension = min(c_dwOutputImageWidth, c_dwOutputImageHeight);
-        const int dwRadius = dwDimension/2;
-        const int nFirstLine = (c_dwOutputImageHeight-dwDimension)/2;    
-        const int nStartPos = (c_dwOutputImageWidth-dwDimension)/2;
-
-        for (int nLine = -dwRadius; nLine < dwRadius; ++nLine, pBuf += lPitch)
-        {
-            const int nXPos = (int)sqrt(dwRadius*(double)dwRadius - nLine*(double)nLine);
-            const int nStartPos = (c_dwOutputImageWidth / 2) - nXPos;
-            const int cPixels = nXPos * 2;
-            DWORD *pLine = reinterpret_cast<DWORD *>(pBuf) + nStartPos;
-
-            SetColor(pLine, dwColor, cPixels);
-        }
-    }
-};
-
-ref class CTriangleDrawer sealed: public CFrameGenerator
-{
-protected private:
-    void DrawFrame(BYTE *pBuf, DWORD dwColor, LONG lPitch) override
-    {
-        const DWORD dwDimension = min(c_dwOutputImageWidth, c_dwOutputImageHeight);
-
-        const int nFirstLine = (c_dwOutputImageHeight-dwDimension)/2;    
-        const int nStartPos = (c_dwOutputImageWidth-dwDimension)/2;
-
-        int nLeft = c_dwOutputImageWidth / 2;
-        int nRight = nLeft + 1;
-        const int cLinesPerPixel = 2;
-
-        for (int nLine = 0, nLinesToGrow = 1; nLine < dwDimension; ++nLine, pBuf += lPitch, --nLinesToGrow)
-        {
-            if (nLinesToGrow == 0)
-            {
-                nLinesToGrow = cLinesPerPixel;
-                --nLeft;
-                ++nRight;
-            }
-
-            DWORD *pLine = reinterpret_cast<DWORD *>(pBuf) + nLeft;
-            SetColor(pLine, dwColor, nRight - nLeft);
-        }
-    }
-};
-
-CFrameGenerator ^CreateFrameGenerator(GeometricShape eShape)
-{
-    switch(eShape)
-    {
-    case GeometricShape_Square:
-        {
-            return ref new CSquareDrawer();
-        }
-    case GeometricShape_Circle:
-        {
-            return ref new CCircleDrawer();
-        }
-    case GeometricShape_Triangle:
-        {
-            return ref new CTriangleDrawer();
-        }
-    default:
-        {
-            throw ref new InvalidArgumentException();
-        }
-    }
-}
-*/
 ComPtr<CVizarioMediaStream> CVizarioMediaStream::CreateInstance(CVizarioMediaSource *pSource) //, GeometricShape eShape)
 {
     if (pSource == nullptr)

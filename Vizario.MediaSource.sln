@@ -7,11 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAppUWP", "TestAppUWP\Te
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Vizario.MediaSource", "VizarioSource\Vizario.MediaSource.vcxproj", "{7E320948-8F63-4267-B0F1-E81EEDEDC02F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Vizario.MediaSink", "VizarioSink\Vizario.MediaSink.vcxproj", "{623E7847-DD73-41AD-8C72-9ACD720FA2DD}"
-	ProjectSection(ProjectDependencies) = postProject
-		{7E320948-8F63-4267-B0F1-E81EEDEDC02F} = {7E320948-8F63-4267-B0F1-E81EEDEDC02F}
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -64,22 +59,6 @@ Global
 		{7E320948-8F63-4267-B0F1-E81EEDEDC02F}.Release|x64.Build.0 = Release|x64
 		{7E320948-8F63-4267-B0F1-E81EEDEDC02F}.Release|x86.ActiveCfg = Release|Win32
 		{7E320948-8F63-4267-B0F1-E81EEDEDC02F}.Release|x86.Build.0 = Release|Win32
-		{623E7847-DD73-41AD-8C72-9ACD720FA2DD}.Debug|ARM.ActiveCfg = Debug|ARM
-		{623E7847-DD73-41AD-8C72-9ACD720FA2DD}.Debug|ARM.Build.0 = Debug|ARM
-		{623E7847-DD73-41AD-8C72-9ACD720FA2DD}.Debug|ARM64.ActiveCfg = Debug|ARM64
-		{623E7847-DD73-41AD-8C72-9ACD720FA2DD}.Debug|ARM64.Build.0 = Debug|ARM64
-		{623E7847-DD73-41AD-8C72-9ACD720FA2DD}.Debug|x64.ActiveCfg = Debug|x64
-		{623E7847-DD73-41AD-8C72-9ACD720FA2DD}.Debug|x64.Build.0 = Debug|x64
-		{623E7847-DD73-41AD-8C72-9ACD720FA2DD}.Debug|x86.ActiveCfg = Debug|Win32
-		{623E7847-DD73-41AD-8C72-9ACD720FA2DD}.Debug|x86.Build.0 = Debug|Win32
-		{623E7847-DD73-41AD-8C72-9ACD720FA2DD}.Release|ARM.ActiveCfg = Release|ARM
-		{623E7847-DD73-41AD-8C72-9ACD720FA2DD}.Release|ARM.Build.0 = Release|ARM
-		{623E7847-DD73-41AD-8C72-9ACD720FA2DD}.Release|ARM64.ActiveCfg = Release|ARM64
-		{623E7847-DD73-41AD-8C72-9ACD720FA2DD}.Release|ARM64.Build.0 = Release|ARM64
-		{623E7847-DD73-41AD-8C72-9ACD720FA2DD}.Release|x64.ActiveCfg = Release|x64
-		{623E7847-DD73-41AD-8C72-9ACD720FA2DD}.Release|x64.Build.0 = Release|x64
-		{623E7847-DD73-41AD-8C72-9ACD720FA2DD}.Release|x86.ActiveCfg = Release|Win32
-		{623E7847-DD73-41AD-8C72-9ACD720FA2DD}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

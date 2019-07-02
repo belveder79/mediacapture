@@ -156,10 +156,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\VizarioSink\Vizario.MediaSink.vcxproj">
-      <Project>{623e7847-dd73-41ad-8c72-9acd720fa2dd}</Project>
-      <Name>Vizario.MediaSink</Name>
-    </ProjectReference>
     <ProjectReference Include="..\VizarioSource\Vizario.MediaSource.vcxproj">
       <Project>{7e320948-8f63-4267-b0f1-e81eededc02f}</Project>
       <Name>Vizario.MediaSource</Name>
