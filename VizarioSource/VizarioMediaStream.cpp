@@ -108,6 +108,16 @@ public:
 private:
     ComPtr<CVizarioMediaSource> _spSource;
 };
+
+// REMOVE THIS TO MAKE IT BREAK!!!!
+ref class DummyU sealed {
+public:	DummyU() {}
+};
+DummyU^ CreateDummyU() {
+	return ref new DummyU();
+}
+// REMOVE THIS TO MAKE IT BREAK!!!!
+
 /*
 BYTE Clip(int i)
 {
