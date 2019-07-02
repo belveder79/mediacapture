@@ -1,0 +1,4 @@
+LIBRARY
+EXPORTS
+   VZSource_pushVideoPacket   @1
+   VZSource_pushAudioPacket   @2
